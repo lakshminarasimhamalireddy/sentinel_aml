@@ -2,6 +2,32 @@
 
 Sentinel AML is a banking transaction-monitoring prototype. It receives a transaction, persists it, evaluates explainable anti-money-laundering (AML) rules, creates a risk-ranked alert when needed, and gives a compliance analyst a workflow to review and dispose of the alert.
 
+## Product preview
+
+### Alert investigation workspace
+
+The analyst sees a prioritised alert queue, risk distribution, evidence timeline, and case-disposition controls in one view.
+
+![Sentinel AML alert queue and case detail](docs/screenshots/alert-queue-case-detail.png)
+
+### Real-time transaction intake
+
+Transactions can be submitted through the dashboard to demonstrate immediate validation, storage, and AML-rule evaluation.
+
+![Sentinel AML transaction intake](docs/screenshots/transaction-intake.png)
+
+### API documentation
+
+The Spring Boot backend publishes its versioned REST endpoints through OpenAPI/Swagger.
+
+![Sentinel AML OpenAPI endpoints](docs/screenshots/swagger-api.png)
+
+### Analyst case disposition
+
+An analyst records the case status, identity, and investigation rationale; the alert remains preserved for auditability.
+
+![Sentinel AML case disposition](docs/screenshots/case-disposition.png)
+
 ## Business flow
 
 ```text
