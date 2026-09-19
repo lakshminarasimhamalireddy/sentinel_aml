@@ -28,6 +28,32 @@ An analyst records the case status, identity, and investigation rationale; the a
 
 ![Sentinel AML case disposition](docs/screenshots/case-disposition.png)
 
+### Multiple AML typologies detected
+
+The alert queue below demonstrates three implemented AML rules in action: a large transaction, a **Structuring** pattern scored at 85, and a **High-Risk Jurisdiction** transfer scored at 90. The critical-risk count updates automatically as alerts are created.
+
+![Structuring and high-risk-jurisdiction alerts in the Sentinel queue](docs/screenshots/structuring-high-risk-alerts.png)
+
+## PostgreSQL persistence and configurable rules
+
+### Stored transaction evidence
+
+Every transaction evaluated by Sentinel is persisted with its normalized INR value, channel, jurisdiction, counterparty, and timestamp. This provides the evidence trail used by the alert investigation workflow.
+
+![Persisted AML transactions in PostgreSQL](docs/screenshots/postgres-transactions.png)
+
+### Imported customer accounts
+
+The supplied synthetic customer and account data is imported on startup, creating the monitored-account base used by transaction ingestion and detection.
+
+![Imported customer accounts in PostgreSQL](docs/screenshots/postgres-accounts.png)
+
+### Live rule configuration
+
+AML thresholds, rule enablement, risk weights, and the high-risk jurisdiction list are stored in PostgreSQL. Compliance administrators can tune these values without changing detection-engine code.
+
+![AML rule configuration in PostgreSQL](docs/screenshots/postgres-rule-config.png)
+
 ## Business flow
 
 ```text
